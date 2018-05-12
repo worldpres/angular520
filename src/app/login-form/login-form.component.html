@@ -1,0 +1,16 @@
+<div *ngIf="!logged">
+  <p>
+    Jeśli zalogujesz się poprawnie, będziesz mógł/mogła dodawać kolejne pozycje.
+  </p>
+  <p>
+    <input #login type="text" placeholder="Login">
+    <input #password type="password" placeholder="Hasło">
+    <button (click)="logMeIn(login.value, password.value)">Zaloguj się</button>
+  </p>
+</div>
+
+{{loggedText}}
+
+<span *ngIf="logged">
+  <button (click)="logMeOut()">Wyloguj</button>
+</span>
