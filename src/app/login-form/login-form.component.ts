@@ -12,20 +12,20 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {
   }
   
-  public logged;
-  public loggedText;
+  private logged;
+  private loggedText;
   
-  public logMeIn(login, password){
+  private logMeIn(login, password){
     if(login=="a" && password=="a"){
       this.logged=true;
-      this.loggedText="Witaj "+login;
+      this.loggedText="Zalogowany: "+login;
     }
     else{
       this.loggedText="Błędny login lub hasło!";
     }
   }
   
-  public logMeOut(){
+  private logMeOut(){
     this.logged=false;
     this.loggedText="";
   }
