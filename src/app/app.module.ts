@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms'; //because of [(ngModel)]="name" (2
 
 
 import { AppComponent } from './app.component';
-import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginFormComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,

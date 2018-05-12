@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class LoginFormComponent implements OnInit {
+export class LoginComponent implements OnInit {
   
   constructor() { }
   
   ngOnInit() {
   }
   
-  private logged;
-  private loggedText;
+  public logged;
+  public loggedText;
   
   private logMeIn(login, password){
     if(login=="a" && password=="a"){
