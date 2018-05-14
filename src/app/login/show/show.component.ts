@@ -13,6 +13,7 @@ export class ShowComponent implements OnInit {
   }
 
   public searchName;
+  public firstLetter;
 
   private database = [
     {
@@ -33,14 +34,21 @@ export class ShowComponent implements OnInit {
     }
   ]
 
-  private prepareDatabase(searchText='', sortProp='name', sortAsc=true) {
+  private setFirstLetter(letter){
+    this.firstLetter=letter;
+  }
+
+  private prepareDatabase(firstLetter='', searchName='', sortProp='name', sortAsc=true) {
     let data = this.database.sort(function(a, b) {
       if(sortAsc) return a[sortProp].localeCompare(b[sortProp]);
       else return b[sortProp].localeCompare(a[sortProp]);
       //if(asc) return (a[sortProp] > b[sortProp]) ? 1 : ((a[sortProp] < b[sortProp]) ? -1 : 0);
       //else return (b[sortProp] > a[sortProp]) ? 1 : ((b[sortProp] < a[sortProp]) ? -1 : 0);
     });
-    return data.filter(obj => obj.name.includes(searchText));
+    data = data.filter(obj => obj.name.includes(searchName));
+    if(firstLetter!='') data = data.filter(obj => obj.name.charAt(0)==firstLetter);
+    if(firstLetter!='' || searchName!='') return data;
+    else return;
   }
 
   private alphabet(){
