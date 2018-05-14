@@ -34,10 +34,6 @@ export class ShowComponent implements OnInit {
     }
   ]
 
-  private setFirstLetter(letter){
-    this.firstLetter=letter;
-  }
-
   private prepareDatabase(firstLetter='', searchName='', sortProp='name', sortAsc=true) {
     let data = this.database.sort(function(a, b) {
       if(sortAsc) return a[sortProp].localeCompare(b[sortProp]);
@@ -60,4 +56,12 @@ export class ShowComponent implements OnInit {
     return letters.sort( function(a, b){ return a.localeCompare(b); } );
   }
 
+  private setSearchName(s){
+    this.searchName = s;
+  }
+
+  private setFirstLetter(l){
+    this.firstLetter=l;
+  }
+  
 }

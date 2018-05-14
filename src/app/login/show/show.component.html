@@ -1,8 +1,10 @@
 <button *ngFor="let letter of alphabet()" (click)="setFirstLetter(letter)">
   {{letter}}
 </button>
+<button (click)="setFirstLetter('')">Reset</button>
 
 <input type="text" [(ngModel)]="searchName">
+<button (click)="setSearchName('')">Reset</button>
 
 <div *ngFor="let junk of prepareDatabase(firstLetter, searchName)">
   <h2>{{ junk.name }}</h2>
