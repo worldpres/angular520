@@ -12,7 +12,9 @@ export class ShowComponent implements OnInit {
   ngOnInit() {
   }
 
-  public database = [
+  public searchName;
+
+  private database = [
     {
       "name" : "monitory",
       "place" : ["wystawka"],
@@ -31,18 +33,17 @@ export class ShowComponent implements OnInit {
     }
   ]
 
-  public sortDatabase(prop, asc=true) {
-    return this.database.sort(function(a, b) {
-      if(asc) return a[prop].localeCompare(b[prop]);
-      else return b[prop].localeCompare(a[prop]);
-      //if(asc) return (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0);
-      //else return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
+  private prepareDatabase(searchText='', sortProp='name', sortAsc=true) {
+    let data = this.database.sort(function(a, b) {
+      if(sortAsc) return a[sortProp].localeCompare(b[sortProp]);
+      else return b[sortProp].localeCompare(a[sortProp]);
+      //if(asc) return (a[sortProp] > b[sortProp]) ? 1 : ((a[sortProp] < b[sortProp]) ? -1 : 0);
+      //else return (b[sortProp] > a[sortProp]) ? 1 : ((b[sortProp] < a[sortProp]) ? -1 : 0);
     });
+    return data.filter(obj => obj.name.includes(searchText));
   }
 
-  public sortedDatabase = this.sortDatabase('name');
-
-  public alphabet(){
+  private alphabet(){
     let letters = [];
     for (const obj of this.database) {
       if(obj.name) letters.push(obj.name.substr(0,1));

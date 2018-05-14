@@ -2,7 +2,9 @@
   {{letter}}
 </div>
 
-<div *ngFor="let junk of sortedDatabase">
+<input type="text" [(ngModel)]="searchName">
+
+<div *ngFor="let junk of prepareDatabase(searchName)">
   <h2>{{ junk.name }}</h2>
   <p>{{ junk.place.join(", ") }}</p>
 </div>
