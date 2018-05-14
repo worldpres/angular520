@@ -12,4 +12,18 @@ export class ShowComponent implements OnInit {
   ngOnInit() {
   }
 
+  public database = [
+    {
+      "name" : "monitory",
+      "place" : ["wystawka"],
+    },
+    {
+      "name" : "toster",
+      "place" : ["wystawka", "PSZOK"],
+    },
+    {
+      "name" : "opony od samochodu osobowego",
+      "place" : ["wystawka", "PSZOK"],
+    }
+  ]
 }

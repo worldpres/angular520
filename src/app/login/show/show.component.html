@@ -1,3 +1,10 @@
 <p>
   show works!
+  {{ database | json }}
 </p>
+
+
+<div *ngFor="let junk of database">
+  <h2>{{ junk.name }}</h2>
+  <p>{{ junk.place }}</p>
+</div>
