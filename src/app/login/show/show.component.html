@@ -1,10 +1,8 @@
-<p>
-  show works!
-  {{ database | json }}
-</p>
+<div *ngFor="let letter of alphabet()">
+  {{letter}}
+</div>
 
-
-<div *ngFor="let junk of database">
+<div *ngFor="let junk of sortedDatabase">
   <h2>{{ junk.name }}</h2>
-  <p>{{ junk.place }}</p>
+  <p>{{ junk.place.join(", ") }}</p>
 </div>
