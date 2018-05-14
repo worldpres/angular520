@@ -26,15 +26,17 @@ export class ShowComponent implements OnInit {
       "place" : ["wystawka", "PSZOK"],
     },
     {
-      "name" : "toster2",
+      "name" : "śtoster2",
       "place" : ["wystawka", "PSZOK"],
     }
   ]
 
   public sortDatabase(prop, asc=true) {
     return this.database.sort(function(a, b) {
-      if(asc) return (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0);
-      else return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
+      if(asc) return a[prop].localeCompare(b[prop]);
+      else return b[prop].localeCompare(a[prop]);
+      //if(asc) return (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0);
+      //else return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
     });
   }
 
@@ -46,7 +48,7 @@ export class ShowComponent implements OnInit {
       if(obj.name) letters.push(obj.name.substr(0,1));
     }
     letters = letters.filter(function (item, index, array) {return array.indexOf(item) == index;});
-    return letters.sort();
+    return letters.sort( function(a, b){ return a.localeCompare(b); } );
   }
 
 }
