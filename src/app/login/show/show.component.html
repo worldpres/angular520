@@ -8,15 +8,19 @@
 
 <div *ngFor="let junk of prepareDatabase(firstLetter, searchName)">
   <div *ngIf="logged; else elseBlock">
-    <h2>
-      <input type="text" [(ngModel)]="junk.name">
-    </h2>
     <p>
-      <input type="text" [(ngModel)]="junk.place">
+      <b>{{ junk.name }}</b>
+      <button>Usuń</button>
+      <button>Edytuj</button>
     </p>
+    <p>{{ junk.place.join(", ") }}</p>
   </div>
   <ng-template #elseBlock>
-    <h2>{{ junk.name }}</h2>
+    <p>
+      <b>
+        {{ junk.name }}
+      </b>
+    </p>
     <p>{{ junk.place.join(", ") }}</p>
   </ng-template>
   
