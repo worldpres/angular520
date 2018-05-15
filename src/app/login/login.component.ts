@@ -6,27 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
-  constructor() { }
-  
-  ngOnInit() {
-  }
-  
+
   public logged;
   public loggedText;
-  
-  private logMeIn(login, password){
-    if(login=="a" && password=="a"){
-      this.logged=true;
-      this.loggedText="Zalogowany: "+login;
-    }
-    else{
-      this.loggedText="Błędny login lub hasło!";
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  private logMeIn(login, password) {
+    if (login === 'a' && password === 'a') {
+      this.logged = true;
+      this.loggedText = 'Zalogowany: ' + login;
+    } else {
+      this.loggedText = 'Błędny login lub hasło!';
     }
   }
-  
-  private logMeOut(){
-    this.logged=false;
-    this.loggedText="";
+
+  private logMeOut() {
+    this.logged = false;
+    this.loggedText = '';
   }
 }

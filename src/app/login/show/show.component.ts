@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-show',
@@ -9,6 +9,7 @@ export class ShowComponent implements OnInit {
 
   public searchName;
   public firstLetter;
+  @Input() logged;
 
   private database = [
     {
@@ -48,11 +49,11 @@ export class ShowComponent implements OnInit {
     if (firstLetter !== '') {
       data = data.filter(obj => obj.name.charAt(0) === firstLetter);
     }
-    if (firstLetter !== '' || searchName !== '') {
+    // if (firstLetter !== '' || searchName !== '') {
       return data;
-    } else {
-      return;
-    }
+    // } else {
+    //   return;
+    // }
   }
 
   private alphabet() {
