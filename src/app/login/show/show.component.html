@@ -1,6 +1,6 @@
 <app-add *ngIf="logged" [database]="database"></app-add>
 
-<button *ngFor="let letter of alphabet()" (click)="setFirstLetter(letter)">
+<button *ngFor="let letter of alphabet(); let i=index" (click)="setFirstLetter(letter)" [disabled]="disableLetter(i)">
   {{letter}}
 </button>
 <button (click)="setFirstLetter('')" [disabled]="!firstLetter">Wszystkie</button>

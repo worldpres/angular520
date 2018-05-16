@@ -79,4 +79,8 @@ export class ShowComponent implements OnInit {
     this.database = this.database.filter(item => item.name !== junkName);
   }
 
+  public disableLetter(i) {
+    return i === this.alphabet().indexOf(this.firstLetter);
+  }
+
 }
