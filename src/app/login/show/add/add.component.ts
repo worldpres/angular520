@@ -8,9 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AddComponent implements OnInit {
 
   @Input() database;
-  public name;
-  public place;
-  public info;
+
+  public register = {
+    name: '',
+    place: '',
+    info: ''
+  };
 
   constructor() { }
 
@@ -20,22 +23,33 @@ export class AddComponent implements OnInit {
   private add() {
     let found = false;
     for (const object of this.database) {
-      if (object.hasOwnProperty('name') && object.name === this.name) {
+      if (object.hasOwnProperty('name') && object.name === this.register.name) {
         found = true;
-        this.info = 'Podana nazwa już istnieje.';
+        this.register.info = 'Podana nazwa już istnieje.';
         break;
       }
     }
     if (!found) {
-      this.database.push({'name': this.name, 'place': this.place});
-      this.name = '';
-      this.place = '';
-      this.info = 'Dodano do aplikacji. Nie zapomnij wysłać na serwer.';
+      this.database.push({'name': this.register.name, 'place': this.register.place});
+      this.register.name = '';
+      this.register.place = '';
+      this.register.info = 'Dodano do aplikacji. Nie zapomnij wysłać na serwer.';
     }
   }
 
   private isDisable() {
-    if (this.name && this.place) { return false; }
+    if (this.register.name && this.register.place) { return false; }
     return true;
   }
+
+  registerNameValidation($event) {
+    const correct = (/^[a-zA-Z]{1,}[a-zA-Z\s]{0,}$/.test(this.register.name));
+    if (!correct) {
+      this.register.info = 'Nazwa może zawierać tylko litery.';
+    }
+    if (correct || this.register.name === '') {
+      this.register.info = '';
+    }
+  }
+
 }
