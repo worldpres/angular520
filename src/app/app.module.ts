@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; //because of [(ngModel)]="name" (2way bindings)
+import { FormsModule } from '@angular/forms'; // because of [(ngModel)]="name" (2way bindings)
 
 
 import { AppComponent } from './app.component';
@@ -18,7 +18,7 @@ import { AddComponent } from './login/show/add/add.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule //because of [(ngModel)]="name" (2way bindings)
+    FormsModule // because of [(ngModel)]="name" (2way bindings)
   ],
   providers: [],
   bootstrap: [AppComponent]
