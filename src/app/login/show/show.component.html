@@ -1,21 +1,19 @@
-<div>
-  {{ database | json }}
-</div>
+<app-add *ngIf="logged" [database]="database"></app-add>
 
 <button *ngFor="let letter of alphabet()" (click)="setFirstLetter(letter)">
   {{letter}}
 </button>
-<button (click)="setFirstLetter('')">Czyść</button>
+<button (click)="setFirstLetter('')" [disabled]="!firstLetter">Wszystkie</button>
 
 <input type="text" [(ngModel)]="searchName">
-<button (click)="setSearchName('')">Czyść</button>
+<button (click)="setSearchName('')" [disabled]="!searchName">Czyść</button>
 
 <div *ngFor="let junk of prepareDatabase(firstLetter, searchName)">
   
   <div *ngIf="logged; else notLoggedBlock">
     <p>
-      <b>{{ junk.name }}</b>
       <button (click)="delete(junk.name)">Usuń</button>
+      <b>{{ junk.name }}</b>
       <input type="text" [(ngModel)]="junk.place">    
     </p>
   </div>

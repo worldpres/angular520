@@ -1,0 +1,6 @@
+<p>Dodaj nowy rekord:
+  <input type="text" [(ngModel)]="name" placeholder="Podaj nazwę">
+  <input type="text" [(ngModel)]="place" placeholder="Podaj miejsce">
+  <button (click)="add()" [disabled]="isDisable()">Dodaj</button>
+</p>
+<p>{{ info }}</p>

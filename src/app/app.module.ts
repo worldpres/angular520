@@ -6,13 +6,15 @@ import { FormsModule } from '@angular/forms'; //because of [(ngModel)]="name" (2
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ShowComponent } from './login/show/show.component';
+import { AddComponent } from './login/show/add/add.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ShowComponent
+    ShowComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
