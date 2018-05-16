@@ -11,22 +11,22 @@ export class ShowComponent implements OnInit {
   public firstLetter;
   @Input() logged;
 
-  private database = [
+  public database = [
     {
       'name' : 'monitory',
-      'place' : ['wystawka'],
+      'place' : 'wystawka',
     },
     {
       'name' : 'toster',
-      'place' : ['wystawka', 'PSZOK'],
+      'place' : 'wystawka, PSZOK',
     },
     {
       'name' : 'opony od samochodu osobowego',
-      'place' : ['wystawka', 'PSZOK'],
+      'place' : 'wystawka, PSZOK',
     },
     {
       'name' : 'śtoster2',
-      'place' : ['wystawka', 'PSZOK'],
+      'place' : 'wystawka, PSZOK',
     }
   ];
 
@@ -49,11 +49,11 @@ export class ShowComponent implements OnInit {
     if (firstLetter !== '') {
       data = data.filter(obj => obj.name.charAt(0) === firstLetter);
     }
-    // if (firstLetter !== '' || searchName !== '') {
+    if (firstLetter !== '' || searchName !== '') {
       return data;
-    // } else {
-    //   return;
-    // }
+    } else {
+      return data;
+    }
   }
 
   private alphabet() {
@@ -73,6 +73,10 @@ export class ShowComponent implements OnInit {
 
   private setFirstLetter(l) {
     this.firstLetter = l;
+  }
+
+  private delete(junkName) {
+    this.database = this.database.filter(item => item.name !== junkName);
   }
 
 }
