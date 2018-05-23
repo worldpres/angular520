@@ -5,7 +5,7 @@
 <button *ngFor="let letter of alphabet(); let i=index" (click)="setFirstLetter(letter)" [disabled]="disableLetter(i)">
   {{letter}}
 </button>
-<button (click)="setFirstLetter('')" [disabled]="!firstLetter">Wszystkie</button>
+<button (click)="setFirstLetter('')" [disabled]="!firstLetter">Czyść</button>
 
 <input type="text" [(ngModel)]="searchName">
 <button (click)="setSearchName('')" [disabled]="!searchName">Czyść</button>
@@ -14,7 +14,7 @@
   
   <div *ngIf="logged; else notLoggedBlock">
     <p>
-      <button (click)="delete(junk.name)">Usuń</button>
+      <button (click)="delete(junk._id)">Usuń</button>
       <b>{{ junk.name }}</b>
       <input type="text" [(ngModel)]="junk.place">    
     </p>

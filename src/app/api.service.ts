@@ -6,12 +6,16 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class ApiService {
 
-  private _url = '/api/read';
+  private _getUrl = '/api/read';
 
   constructor(private http: HttpClient) { }
 
   readDatabase(): Observable<ApiInterface[]> {
-    return this.http.get<ApiInterface[]>(this._url);
+    return this.http.get<ApiInterface[]>(this._getUrl);
+  }
+
+  deleteFromDatabase(junkId: string): Observable<{}> {
+    return this.http.delete('/api/delete/' + junkId);
   }
 
 }

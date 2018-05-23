@@ -17,7 +17,7 @@ export class ShowComponent implements OnInit {
   constructor(private _apiService: ApiService) { }
 
   ngOnInit() {
-    this._apiService.readDatabase().subscribe(data => this.database = data);
+    this.refreshDatabase();
   }
 
   private refreshDatabase() {
@@ -64,8 +64,13 @@ export class ShowComponent implements OnInit {
     this.firstLetter = l;
   }
 
-  private delete(junkName) {
-    this.database = this.database.filter(item => item.name !== junkName);
+  private delete(junkId) {
+    this._apiService.deleteFromDatabase(junkId).subscribe(
+      suc => { },
+      err => { },
+      () => { this.refreshDatabase(); }
+    );
+    // this.database = this.database.filter(item => item.name !== junkName);
   }
 
   public disableLetter(i) {

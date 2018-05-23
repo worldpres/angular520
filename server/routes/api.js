@@ -29,6 +29,23 @@ router.get('/read', (req, res) => {
 });
 
 
+var ObjectId = require('mongodb').ObjectID;
+
+router.delete('/delete/:id', function(req, res) {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db('whichbin');
+    var query = { _id: ObjectId(req.params.id)};
+    dbo.collection('whichbin').remove(query, function(err, obj) {
+      if (err) throw err;
+      db.close();
+      console.log('one document deleted (id:'+req.params.id+')');
+      res.send(true);
+    });
+  });
+});
+
+
 
 router.get('/insert', (req, res) => {
   MongoClient.connect(url, function(err, db) {
