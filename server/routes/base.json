@@ -1,0 +1,726 @@
+[
+    {
+      "name": "artykuły higieniczne",
+      "place": "odpady  zmieszane"
+    },
+    {
+      "name": "bandaże",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "baterie",
+      "place": "zbiórki, PSZOK"
+    },
+    {
+      "name": "bombki choinkowe",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "buty",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "ceramika",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "cerata",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "chusteczki higieniczne",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "chusteczki nawilżane",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "deska do krojenia",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "deskorolka",
+      "place": "wystawki, PSZOK"
+    },
+    {
+      "name": "długopisy",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "doniczka gliniana",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "drukarka",
+      "place": "punkty sprzedaży, wystawka, PSZOK"
+    },
+    {
+      "name": "drut (drobny złom)",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "dywan",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "elektryczne i elektroniczne zabawki",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "flakonik po perfumach",
+      "place": "pojemnik/worek zielony"
+    },
+    {
+      "name": "flamastry",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "folia aluminiowa",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "folia aluminiowa po czekoladzie",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "folia aluminiowa z kubków po jogurtach",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "folia bąbelkowa",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "folia przeźroczysta (czysta)",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "gałązki drzew, krzewów",
+      "place": "kompostownik, PSZOK"
+    },
+    {
+      "name": "gazety",
+      "place": "pojemnik/worek niebieski, PSZOK"
+    },
+    {
+      "name": "gąbka",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "gofrownica",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "guma do żucia",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "gumka do mazania",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "grzejnik",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "jarzyny (gotowane)",
+      "place": "odpady zmieszane,  kompostownik"
+    },
+    {
+      "name": "kapsle od butelek",
+      "place": "pojemnik/worek żółty PSZOK"
+    },
+    {
+      "name": "karimata",
+      "place": "pojemnik/worek żółty PSZOK"
+    },
+    {
+      "name": "kartonik po soczkach",
+      "place": "pojemnik żółty, PSZOK"
+    },
+    {
+      "name": "kartony, kartonaże",
+      "place": "pojemnik/worek niebieski, PSZOK"
+    },
+    {
+      "name": "karton po mleku",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "kaseta na tusz do drukarki",
+      "place": "PSZOK"
+    },
+    {
+      "name": "klucze metalowe",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "kołdra",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "korek",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "kosiarka ogrodowa",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "kora",
+      "place": "kompostownik, PSZOK"
+    },
+    {
+      "name": "kości",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "kuchenka gazowa",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "kubek plastikowy po jogurcie",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "kubek plastikowy po produktach mlecznych",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "kwiaty cięte",
+      "place": "odpady zmieszane, kompostownik,"
+    },
+    {
+      "name": "liście z drzew",
+      "place": "odpady zielone, kompostownik, PSZOK"
+    },
+    {
+      "name": "lodówka",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "lokówka",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "lusterko",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "maszynka do golenia jednorazowa",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "materac",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "materac dmuchany",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "mikrofalówka",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "narty",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "narzędzia elektryczne",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "niedopałki papierosów",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "obrus",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "obuwie (zniszczone)",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "odpady mięsne",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "odtwarzacz DVD",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "okulary",
+      "place": "odpady zmieszane, zbiórki, PSZOK"
+    },
+    {
+      "name": "opakowanie po kawie (szklane)",
+      "place": "pojemnik/worek zielony, PSZOK"
+    },
+    {
+      "name": "opony od samochodu osobowego",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "papier brudny, zatłuszczony",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "papier listowy",
+      "place": "pojemnik/worek niebieski, PSZOK"
+    },
+    {
+      "name": "papier do pisania",
+      "place": "pojemnik/worek niebieski, PSZOK"
+    },
+    {
+      "name": "papier do drukarki",
+      "place": "pojemnik/worek niebieski, PSZOK"
+    },
+    {
+      "name": "papier pergaminowy (tłusty, zabrudzony)",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "papier po margarynie",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "pasek skórzany",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "pasta do butów",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "patyczki higieniczne",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "pieluchy jednorazowe",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "plastelina",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "podpaski",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "podściółka dla kotów",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "pończochy",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "popiół",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "porcelana",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "pralka",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "produkty mleczne",
+      "place": "odpady zmieszane lub kompostownik"
+    },
+    {
+      "name": "pumeks",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "radioodbiornik",
+      "place": "punkty sprzedaży, zbiórki, PSZOK"
+    },
+    {
+      "name": "ramy okienne",
+      "place": "PSZOK"
+    },
+    {
+      "name": "resztki jedzenia",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "resztki krawieckie",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "resztki świec",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "rękawice gumowe",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "roleta okienna",
+      "place": "pojemnik/worek żółty,  PSZOK"
+    },
+    {
+      "name": "rolki, rowery",
+      "place": "wystawki , PSZOK"
+    },
+    {
+      "name": "sierść",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "skorupy jajek",
+      "place": "odpady zmieszane,  kompostownik"
+    },
+    {
+      "name": "skórki po owocach i warzywach",
+      "place": "odpady zmieszane, kompostownik"
+    },
+    {
+      "name": "szkło wielowarstwowe, klejone",
+      "place": "odpady wielkogabarytowe, PSZOK"
+    },
+    {
+      "name": "ścinki krawieckie",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "ścięta trawa",
+      "place": "odpady zielone, kompostownik"
+    },
+    {
+      "name": "ściółka dla gryzoni",
+      "place": "odpady zmieszane, kompostownik"
+    },
+    {
+      "name": "świeca",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "tacka styropianowa",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "taśma uszczelniająca do okien",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "taśmy klejące",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "telewizory, monitory",
+      "place": "wystawka,  PSZOK"
+    },
+    {
+      "name": "tłuszcze spożywcze",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "torebki z odkurzacza",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "toster",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "trawa",
+      "place": "odpady zielone, kompostownik"
+    },
+    {
+      "name": "trociny",
+      "place": "odpady zmieszane, kompostownik"
+    },
+    {
+      "name": "umywalka",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "waciki kosmetyczne",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "wanna",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "wata opatrunkowa",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "wentylator",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "włosy",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "worki po cemencie",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "worki z odkurzacza",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "zapalniczki",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "ziemia z doniczek",
+      "place": "odpady zmieszane, kompostownik"
+    },
+    {
+      "name": "znicze",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "żelazko",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "zużyte baterie",
+      "place": "zbiórki, PSZOK"
+    },
+    {
+      "name": "żwirek dla kota",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "żyletki",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "żywność",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "farby malarskie",
+      "place": "PSZOK, zgłoszenie do Urzędu Miasta"
+    },
+    {
+      "name": "filtr do kawy z fusami",
+      "place": "kompostownik, PSZOK"
+    },
+    {
+      "name": "fusy po herbacie i kawie",
+      "place": "odpady zmieszane, kompostownik"
+    },
+    {
+      "name": "gruz budowlany",
+      "place": "PSZOK, zgłoszenie do Urzędu Miasta"
+    },
+    {
+      "name": "hamak",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "haczyk wędkarski",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "haftka krawiecka",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "karton po pizzy (niezatłuszczony)",
+      "place": "pojemnik/worek niebieski, PSZOK"
+    },
+    {
+      "name": "katalogi (bez plastikowego opakowania)",
+      "place": "pojemnik/worek niebieski, PSZOK"
+    },
+    {
+      "name": "książki w miękkich okładkach",
+      "place": "pojemnik/worek niebieski, PSZOK"
+    },
+    {
+      "name": "meble",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "naczynie kuchenne aluminiowe",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "nakrętki z metalu",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "nakrętki z tworzywa sztucznego",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "opakowania po kosmetykach szklane",
+      "place": "pojemnik/worek zielony, PSZOK"
+    },
+    {
+      "name": "opakowania po mrożonkach, z powłoką z tworzywa sztucznego",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "opakowanie po jogurcie",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "pinezka",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "płyty gramofonowe, winylowe",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "pojemnik plastikowy po jogurcie",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "pojemnik plastikowy po maśle, margarynie",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "puszki (np. po konserwach owocowych)",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "puszki aluminiowe",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "puszki po napojach",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "reklamówka plastikowa",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "słoiki",
+      "place": "pojemnik/worek zielony, PSZOK"
+    },
+    {
+      "name": "słoiki po konserwach",
+      "place": "pojemnik/worek zielony, PSZOK"
+    },
+    {
+      "name": "szklanka (rozbita)",
+      "place": "odpady zmieszane"
+    },
+    {
+      "name": "sztućce plastikowe",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "sztuczne kwiaty",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "spinacz",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "śruby",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "przeterminowane leki",
+      "place": "pukty zbiórki w aptekach, PSZOK"
+    },
+    {
+      "name": "prospekty foliowane",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "teczki kartonowe na dokumenty",
+      "place": "pojemnik/worek niebieski, PSZOK"
+    },
+    {
+      "name": "tektura falista",
+      "place": "pojemnik/worek niebieski, PSZOK"
+    },
+    {
+      "name": "wiaderko metalowe",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "wiaderko plastikowe",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "worki foliowe",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "worki po proszku (czyste)",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "zakrętka od słoika",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "zakrętki i kapsle z tworzywa sztucznego",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "zeszyty",
+      "place": "pojemnik/worek niebieski, PSZOK"
+    },
+    {
+      "name": "agrafka",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "akumulator",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "blaszane zabawki",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "butelka plastikowa po jogurcie",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "butelka plastikowa po margarynie",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "butelka plastikowa po mleku",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "butelka plastikowa po napojach",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "butelka szklana",
+      "place": "pojemnik/worek zielony, PSZOK"
+    },
+    {
+      "name": "butelka po płynie do zmywania naczyń",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "gwoździe",
+      "place": "pojemnik/worek żółty, PSZOK"
+    },
+    {
+      "name": "maszynka do golenia elektryczna",
+      "place": "wystawka, PSZOK"
+    },
+    {
+      "name": "lampki choinkowe",
+      "place": "PSZOK"
+    }
+   ]
