@@ -12,6 +12,24 @@ router.get('/', (req, res) => {
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://whichbin:whichbin@ds233320.mlab.com:33320/whichbin';
 
+
+
+router.get('/read', (req, res) => {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db('whichbin');
+    var query = { };
+    dbo.collection('whichbin').find(query).toArray(function(err, result) {
+      if (err) throw err;
+      db.close();
+      console.log('all documents readed');
+      res.send(result);
+    });
+  });
+});
+
+
+
 router.get('/insert', (req, res) => {
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
@@ -22,6 +40,23 @@ router.get('/insert', (req, res) => {
       db.close();
       console.log('insert 1 works');
       res.send('insert 1 works');
+    });
+  });
+});
+
+
+
+router.get('/clean', (req, res) => {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db('whichbin');
+    dbo.collection("whichbin").drop(function(err, delOK) {
+      if (err) throw err;
+      if (delOK) {
+        console.log('collection deleted');
+        res.send('collection deleted');
+      }
+      db.close();
     });
   });
 });
