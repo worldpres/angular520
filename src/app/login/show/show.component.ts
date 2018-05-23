@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-show',
@@ -13,9 +14,10 @@ export class ShowComponent implements OnInit {
 
   public database = [];
 
-  constructor() { }
+  constructor(private _apiService: ApiService) { }
 
   ngOnInit() {
+    this._apiService.readDatabase().subscribe(data => this.database = data);
   }
 
   private prepareDatabase(firstLetter = '', searchName = '', sortProp = 'name', sortAsc = true) {
