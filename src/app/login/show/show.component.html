@@ -1,5 +1,7 @@
 <app-add *ngIf="logged" [database]="database"></app-add>
 
+<button (click)="refreshDatabase()">Pobierz aktualne dane z bazy</button>
+
 <button *ngFor="let letter of alphabet(); let i=index" (click)="setFirstLetter(letter)" [disabled]="disableLetter(i)">
   {{letter}}
 </button>
