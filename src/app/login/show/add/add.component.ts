@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-add',
@@ -7,7 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
+  private added;
   @Input() database;
+  @Output() uploaded = new EventEmitter<string>();
 
   public register = {
     name: '',
@@ -15,12 +18,18 @@ export class AddComponent implements OnInit {
     info: ''
   };
 
-  constructor() { }
+  constructor(private _apiService: ApiService) { }
 
   ngOnInit() {
   }
 
   private add() {
+    this._apiService.addToDatabase(this.register.name, this.register.place).subscribe(data => this.added = data);
+
+    // console.log(this.added);
+    this.uploaded.emit('complete');
+
+    /*
     let found = false;
     for (const object of this.database) {
       if (object.hasOwnProperty('name') && object.name === this.register.name) {
@@ -29,8 +38,9 @@ export class AddComponent implements OnInit {
         break;
       }
     }
-    if (!found) {
-      this.database.push({'name': this.register.name, 'place': this.register.place});
+    */
+    if (this.added) {
+      // this.database.push({'name': this.register.name, 'place': this.register.place});
       this.register.name = '';
       this.register.place = '';
       this.register.info = 'Dodano do aplikacji. Nie zapomnij wysłać na serwer.';

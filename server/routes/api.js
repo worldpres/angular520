@@ -29,6 +29,23 @@ router.get('/read', (req, res) => {
 });
 
 
+router.put('/add', (req, res) => {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db('whichbin');
+    var myquery = { name: req.body.name };
+    var newvalues = { $set: { place: req.body.place } };
+    dbo.collection('whichbin').updateOne(myquery, newvalues, { upsert: true }, function(err, data) {
+      if (err) throw err;
+      db.close();
+      console.log('1 document updated');
+      res.send(true);
+    });
+  });
+});
+
+
+
 var ObjectId = require('mongodb').ObjectID;
 
 router.delete('/delete/:id', function(req, res) {

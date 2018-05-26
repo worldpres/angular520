@@ -24,6 +24,10 @@ export class ShowComponent implements OnInit {
     this._apiService.readDatabase().subscribe(data => this.database = data);
   }
 
+  public added(event) {
+    if (event === 'complete') { this.refreshDatabase(); }
+  }
+
   private prepareDatabase(firstLetter = '', searchName = '', sortProp = 'name', sortAsc = true) {
     let data = this.database.sort(function(a, b) {
       if ( sortAsc ) {

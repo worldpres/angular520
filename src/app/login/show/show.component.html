@@ -1,4 +1,4 @@
-<app-add *ngIf="logged" [database]="database"></app-add>
+<app-add *ngIf="logged" [database]="database" (uploaded)="added($event)"></app-add>
 
 <button (click)="refreshDatabase()">Pobierz aktualne dane z bazy</button>
 

@@ -18,4 +18,8 @@ export class ApiService {
     return this.http.delete('/api/delete/' + junkId);
   }
 
+  addToDatabase(name: string, place: string): Observable<{}> {
+    return this.http.put('/api/add', { name: name, place: place } );
+  }
+
 }
