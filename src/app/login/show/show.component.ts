@@ -76,8 +76,17 @@ export class ShowComponent implements OnInit {
     this.firstLetter = l;
   }
 
-  private delete(junkId) {
-    this._apiService.deleteFromDatabase(junkId).subscribe(
+  private delete(junk) {
+    this._apiService.deleteFromDatabase(junk._id).subscribe(
+      suc => { },
+      err => { },
+      () => { this.refreshDatabase(); }
+    );
+    // this.database = this.database.filter(item => item.name !== junkName);
+  }
+
+  private update(junk) {
+    this._apiService.updateDatabase(JSON.stringify(junk)).subscribe(
       suc => { },
       err => { },
       () => { this.refreshDatabase(); }

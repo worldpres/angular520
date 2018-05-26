@@ -25,6 +25,11 @@ export class ApiService {
     return this.http.delete('/api/delete/' + junkId);
   }
 
+  updateDatabase(junk: string): Observable<{}> {
+    const tmpJunk = JSON.parse(junk);
+    return this.http.post('/api/save', { _id: tmpJunk._id, name: tmpJunk.name, place: tmpJunk.place} );
+  }
+
   addToDatabase(name: string, place: string): Observable<{}> {
     return this.http.post('/api/add', { name: name, place: place } );
   }

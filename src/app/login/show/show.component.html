@@ -18,7 +18,8 @@
   
   <div *ngIf="logged; else notLoggedBlock">
     <p>
-      <button (click)="delete(junk._id)">Usuń</button>
+      <button (click)="delete(junk)">Usuń</button>
+      <button (click)="update(junk)">Zapisz</button>
       <b>{{ junk.name }}</b>
       <input type="text" [(ngModel)]="junk.place">    
     </p>

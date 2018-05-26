@@ -48,6 +48,22 @@ router.post('/add', (req, res) => {
 
 var ObjectId = require('mongodb').ObjectID;
 
+router.post('/save', (req, res) => {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db('whichbin');
+    var myquery = { _id: ObjectId(req.body._id) };
+    var newvalues = { $set: { name: req.body.name, place: req.body.place } };
+    dbo.collection('whichbin').updateOne(myquery, newvalues, { upsert: true }, function(err, data) {
+      if (err) throw err;
+      db.close();
+      console.log('1 document updated:'+req.body._id+' : '+req.body.name+' '+req.body.place);
+      res.send(true);
+    });
+  });
+});
+
+
 router.delete('/delete/:id', function(req, res) {
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
