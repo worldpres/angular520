@@ -1,18 +1,13 @@
-<div *ngIf="!logged">
+{{user.loggedText}}
+
+<button *ngIf="user.logged; else notLoggedBlock" (click)="logOut()">Wyloguj</button>
+
+<ng-template #notLoggedBlock>
   <p>
-    Jeśli zalogujesz się poprawnie, będziesz mógł/mogła dodawać kolejne pozycje.
+    <input #login type="text" placeholder="Login">
+    <input #password type="password" placeholder="Hasło">
+    <button (click)="logIn(login.value, password.value)">Zaloguj się</button>
   </p>
-  <p>
-    <input #login type="text" placeholder="Login" value="a">
-    <input #password type="password" placeholder="Hasło" value="a">
-    <button (click)="logMeIn(login.value, password.value)">Zaloguj się</button>
-  </p>
-</div>
+</ng-template>
 
-{{loggedText}}
-
-<span *ngIf="logged">
-  <button (click)="logMeOut()">Wyloguj</button>
-</span>
-
-<app-show [logged]="logged"></app-show>
+<app-show [logged]="user.logged"></app-show>

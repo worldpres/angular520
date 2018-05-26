@@ -1,21 +1,23 @@
-<app-add *ngIf="logged" [database]="database" (uploaded)="added($event)"></app-add>
-
-<div *ngIf="logged">
-  <button (click)="refreshDatabase()">Odśwież dane z bazy</button>
+<span *ngIf="logged">
+  <button (click)="refreshDatabase()">Odśwież bazę</button>
   <button (click)="cleanDatabase()">Czyść bazę</button>
-  <button (click)="importDatabase()">Importuj przykładową bazę</button>
+  <button (click)="importDatabase()">Importuj bazę</button>
+  <app-add [database]="database" (uploaded)="added($event)"></app-add>
+</span>
+
+<div>
+  <button *ngFor="let letter of alphabet(); let i=index" (click)="setFirstLetter(letter)" [disabled]="disableLetter(i)">
+    {{letter}}
+  </button>
+  <button (click)="setFirstLetter('')" [disabled]="!firstLetter">Czyść</button>
 </div>
 
-<button *ngFor="let letter of alphabet(); let i=index" (click)="setFirstLetter(letter)" [disabled]="disableLetter(i)">
-  {{letter}}
-</button>
-<button (click)="setFirstLetter('')" [disabled]="!firstLetter">Czyść</button>
-
-<input type="text" [(ngModel)]="searchName">
-<button (click)="setSearchName('')" [disabled]="!searchName">Czyść</button>
+<div>
+  <input type="text" [(ngModel)]="searchName">
+  <button (click)="setSearchName('')" [disabled]="!searchName">Czyść</button>
+</div>
 
 <div *ngFor="let junk of prepareDatabase(firstLetter, searchName)">
-  
   <div *ngIf="logged; else notLoggedBlock">
     <p>
       <button (click)="delete(junk)">Usuń</button>
@@ -30,5 +32,4 @@
       {{ junk.place }}
     </p>
   </ng-template>
-  
 </div>

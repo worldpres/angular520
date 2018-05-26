@@ -8,21 +8,37 @@ import { ApiService } from '../../../api.service';
 })
 export class AddComponent implements OnInit {
 
-  private added;
   @Input() database;
-  @Output() uploaded = new EventEmitter<string>();
-
   public register = {
     name: '',
     place: '',
-    info: ''
+    info: '',
+    found: false,
+    correct: false,
+    added: false
   };
-
-  private found; correct;
+  @Output() uploaded = new EventEmitter<string>();
 
   constructor(private _apiService: ApiService) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  registerNameValidation($event) {
+    this.register.found = false;
+    for (const object of this.database) {
+      if (object.hasOwnProperty('name') && object.name === this.register.name) {
+        this.register.found = true;
+        this.register.info = 'Podana nazwa już istnieje.';
+        return;
+      }
+    }
+    this.register.correct = (/^[a-zA-Z]{1,}[a-zA-Z\s]{0,}$/.test(this.register.name));
+    if (!this.register.correct) {
+      this.register.info = 'Nazwa może zawierać tylko litery.';
+    }
+    if (this.register.correct || this.register.name === '') {
+      this.register.info = '';
+    }
   }
 
   private add() {
@@ -31,13 +47,10 @@ export class AddComponent implements OnInit {
         // this.database.push({'name': this.register.name, 'place': this.register.place});
         this.register.name = '';
         this.register.place = '';
-        this.register.info = 'Dodano do aplikacji. Nie zapomnij wysłać na serwer.';
+        this.register.info = 'Dodano do aplikacji.';
       }
     });
-
-    // console.log(this.added);
     this.uploaded.emit('complete');
-
     /*
     let found = false;
     for (const object of this.database) {
@@ -48,32 +61,11 @@ export class AddComponent implements OnInit {
       }
     }
     */
-
   }
 
   private isDisable() {
-    if (this.register.name && this.register.place && !this.found && this.correct) { return false; }
+    if (this.register.name && this.register.place && !this.register.found && this.register.correct) { return false; }
     return true;
-  }
-
-  registerNameValidation($event) {
-    this.found = false;
-    for (const object of this.database) {
-      if (object.hasOwnProperty('name') && object.name === this.register.name) {
-        this.found = true;
-        this.register.info = 'Podana nazwa już istnieje.';
-        return;
-      }
-    }
-    // if (!this.found) {
-      this.correct = (/^[a-zA-Z]{1,}[a-zA-Z\s]{0,}$/.test(this.register.name));
-      if (!this.correct) {
-        this.register.info = 'Nazwa może zawierać tylko litery.';
-      }
-      if (this.correct || this.register.name === '') {
-        this.register.info = '';
-      }
-    // }
   }
 
 }

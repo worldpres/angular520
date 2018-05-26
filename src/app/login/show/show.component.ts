@@ -8,11 +8,10 @@ import { ApiService } from '../../api.service';
 })
 export class ShowComponent implements OnInit {
 
+  @Input() logged;
+  public database = [];
   public searchName;
   public firstLetter;
-  @Input() logged;
-
-  public database = [];
 
   constructor(private _apiService: ApiService) { }
 
@@ -32,8 +31,27 @@ export class ShowComponent implements OnInit {
     this._apiService.copyDatabase().subscribe( () => this.refreshDatabase() );
   }
 
-  public added(event) {
-    if (event === 'complete') { this.refreshDatabase(); }
+  private alphabet() {
+    let letters = [];
+    for (const obj of this.database) {
+      if (obj.name) {
+        letters.push(obj.name.substr(0, 1));
+      }
+    }
+    letters = letters.filter(function (item, index, array) { return array.indexOf(item) === index; } );
+    return letters.sort( function(a, b) { return a.localeCompare(b); } );
+  }
+
+  private setFirstLetter(l) {
+    this.firstLetter = l;
+  }
+
+  public disableLetter(i) {
+    return i === this.alphabet().indexOf(this.firstLetter);
+  }
+
+  private setSearchName(s) {
+    this.searchName = s;
   }
 
   private prepareDatabase(firstLetter = '', searchName = '', sortProp = 'name', sortAsc = true) {
@@ -50,30 +68,7 @@ export class ShowComponent implements OnInit {
     if (firstLetter !== '') {
       data = data.filter(obj => obj.name.charAt(0) === firstLetter);
     }
-    if (firstLetter !== '' || searchName !== '') {
-      return data;
-    } else {
-      return;
-    }
-  }
-
-  private alphabet() {
-    let letters = [];
-    for (const obj of this.database) {
-      if (obj.name) {
-        letters.push(obj.name.substr(0, 1));
-      }
-    }
-    letters = letters.filter(function (item, index, array) { return array.indexOf(item) === index; } );
-    return letters.sort( function(a, b) { return a.localeCompare(b); } );
-  }
-
-  private setSearchName(s) {
-    this.searchName = s;
-  }
-
-  private setFirstLetter(l) {
-    this.firstLetter = l;
+    return data;
   }
 
   private delete(junk) {
@@ -86,16 +81,15 @@ export class ShowComponent implements OnInit {
   }
 
   private update(junk) {
-    this._apiService.updateDatabase(JSON.stringify(junk)).subscribe(
+    this._apiService.updateInDatabase(JSON.stringify(junk)).subscribe(
       suc => { },
       err => { },
       () => { this.refreshDatabase(); }
     );
-    // this.database = this.database.filter(item => item.name !== junkName);
   }
 
-  public disableLetter(i) {
-    return i === this.alphabet().indexOf(this.firstLetter);
+  public added(event) {
+    if (event === 'complete') { this.refreshDatabase(); }
   }
 
 }

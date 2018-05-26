@@ -7,25 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  public logged;
-  public loggedText;
+  protected user = {
+    login: 'a',
+    password: 'a',
+    logged: false,
+    loggedText: 'Po zalogowaniu uzyskasz prawa do edycji.'
+  };
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-  private logMeIn(login, password) {
-    if (login === 'a' && password === 'a') {
-      this.logged = true;
-      this.loggedText = 'Zalogowany: ' + login;
+  private logIn(login, password) {
+    if (this.user.login === login && this.user.password === password) {
+      this.user.logged = true;
+      this.user.loggedText = 'Zalogowany: ' + this.user.login;
     } else {
-      this.loggedText = 'Błędny login lub hasło!';
+      this.user.loggedText = 'Błędny login lub hasło!';
     }
   }
 
-  private logMeOut() {
-    this.logged = false;
-    this.loggedText = '';
+  private logOut() {
+    this.user.logged = false;
+    this.user.loggedText = 'Po zalogowaniu uzyskasz prawa do edycji.';
   }
 }
