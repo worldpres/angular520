@@ -13,6 +13,13 @@ export class ApiService {
   readDatabase(): Observable<ApiInterface[]> {
     return this.http.get<ApiInterface[]>(this._getUrl);
   }
+  delDatabase(): Observable<{}> {
+    return this.http.delete('/api/clean/');
+  }
+  copyDatabase(): Observable<{}> {
+    return this.http.put('/api/import/', {});
+  }
+
 
   deleteFromDatabase(junkId: string): Observable<{}> {
     return this.http.delete('/api/delete/' + junkId);
@@ -20,6 +27,10 @@ export class ApiService {
 
   addToDatabase(name: string, place: string): Observable<{}> {
     return this.http.post('/api/add', { name: name, place: place } );
+  }
+
+  cleanDatabase(): Observable<{}> {
+    return this.http.get('/api/clean');
   }
 
 }

@@ -80,7 +80,8 @@ router.get('/insert', (req, res) => {
 
 
 
-router.get('/clean', (req, res) => {
+router.delete('/clean', (req, res) => {
+  console.log(req.body);
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db('whichbin');
@@ -88,7 +89,7 @@ router.get('/clean', (req, res) => {
       if (err) throw err;
       if (delOK) {
         console.log('collection deleted');
-        res.send('collection deleted');
+        res.send(true);
       }
       db.close();
     });
@@ -100,7 +101,7 @@ router.get('/clean', (req, res) => {
 var fs = require('fs');
 var path = require('path'), filePath = path.join(__dirname, 'base.json');
 
-router.get('/import', (req, res) => {
+router.put('/import', (req, res) => {
 
   fs.readFile(filePath, {encoding: 'utf-8'}, (err, body) => {
     if (err) throw err;
@@ -113,7 +114,7 @@ router.get('/import', (req, res) => {
         if (err) throw err;
         db.close();
         console.log("import all works");
-        res.send('import all works');
+        res.send(true);
       });
     });
 

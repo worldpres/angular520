@@ -1,6 +1,10 @@
 <app-add *ngIf="logged" [database]="database" (uploaded)="added($event)"></app-add>
 
-<button (click)="refreshDatabase()">Pobierz aktualne dane z bazy</button>
+<div *ngIf="logged">
+  <button (click)="refreshDatabase()">Odśwież dane z bazy</button>
+  <button (click)="cleanDatabase()">Czyść bazę</button>
+  <button (click)="importDatabase()">Importuj przykładową bazę</button>
+</div>
 
 <button *ngFor="let letter of alphabet(); let i=index" (click)="setFirstLetter(letter)" [disabled]="disableLetter(i)">
   {{letter}}

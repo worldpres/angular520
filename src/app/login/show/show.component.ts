@@ -24,6 +24,14 @@ export class ShowComponent implements OnInit {
     this._apiService.readDatabase().subscribe(data => this.database = data);
   }
 
+  private cleanDatabase() {
+    this._apiService.delDatabase().subscribe( () => this.refreshDatabase() );
+  }
+
+  private importDatabase() {
+    this._apiService.copyDatabase().subscribe( () => this.refreshDatabase() );
+  }
+
   public added(event) {
     if (event === 'complete') { this.refreshDatabase(); }
   }
