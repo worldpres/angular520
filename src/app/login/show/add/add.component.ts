@@ -18,6 +18,8 @@ export class AddComponent implements OnInit {
     info: ''
   };
 
+  private found; correct;
+
   constructor(private _apiService: ApiService) { }
 
   ngOnInit() {
@@ -48,18 +50,28 @@ export class AddComponent implements OnInit {
   }
 
   private isDisable() {
-    if (this.register.name && this.register.place) { return false; }
+    if (this.register.name && this.register.place && !this.found && this.correct) { return false; }
     return true;
   }
 
   registerNameValidation($event) {
-    const correct = (/^[a-zA-Z]{1,}[a-zA-Z\s]{0,}$/.test(this.register.name));
-    if (!correct) {
-      this.register.info = 'Nazwa może zawierać tylko litery.';
+    this.found = false;
+    for (const object of this.database) {
+      if (object.hasOwnProperty('name') && object.name === this.register.name) {
+        this.found = true;
+        this.register.info = 'Podana nazwa już istnieje.';
+        return;
+      }
     }
-    if (correct || this.register.name === '') {
-      this.register.info = '';
-    }
+    // if (!this.found) {
+      this.correct = (/^[a-zA-Z]{1,}[a-zA-Z\s]{0,}$/.test(this.register.name));
+      if (!this.correct) {
+        this.register.info = 'Nazwa może zawierać tylko litery.';
+      }
+      if (this.correct || this.register.name === '') {
+        this.register.info = '';
+      }
+    // }
   }
 
 }
