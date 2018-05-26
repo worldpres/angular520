@@ -26,7 +26,14 @@ export class AddComponent implements OnInit {
   }
 
   private add() {
-    this._apiService.addToDatabase(this.register.name, this.register.place).subscribe(data => this.added = data);
+    this._apiService.addToDatabase(this.register.name, this.register.place).subscribe(data => {
+      if (data) {
+        // this.database.push({'name': this.register.name, 'place': this.register.place});
+        this.register.name = '';
+        this.register.place = '';
+        this.register.info = 'Dodano do aplikacji. Nie zapomnij wysłać na serwer.';
+      }
+    });
 
     // console.log(this.added);
     this.uploaded.emit('complete');
@@ -41,12 +48,7 @@ export class AddComponent implements OnInit {
       }
     }
     */
-    if (this.added) {
-      // this.database.push({'name': this.register.name, 'place': this.register.place});
-      this.register.name = '';
-      this.register.place = '';
-      this.register.info = 'Dodano do aplikacji. Nie zapomnij wysłać na serwer.';
-    }
+
   }
 
   private isDisable() {

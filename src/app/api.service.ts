@@ -19,7 +19,7 @@ export class ApiService {
   }
 
   addToDatabase(name: string, place: string): Observable<{}> {
-    return this.http.put('/api/add', { name: name, place: place } );
+    return this.http.post('/api/add', { name: name, place: place } );
   }
 
 }

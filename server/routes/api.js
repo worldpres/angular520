@@ -29,7 +29,7 @@ router.get('/read', (req, res) => {
 });
 
 
-router.put('/add', (req, res) => {
+router.post('/add', (req, res) => {
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db('whichbin');
