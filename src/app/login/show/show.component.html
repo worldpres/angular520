@@ -20,8 +20,8 @@
 <div *ngFor="let junk of prepareDatabase(firstLetter, searchName)">
   <div *ngIf="logged; else notLoggedBlock">
     <p>
-      <button (click)="delete(junk)">Usuń</button>
-      <button (click)="update(junk)">Zapisz</button>
+      <button (click)="delete(junk)" [disabled]="modify">Usuń</button>
+      <button (click)="update(junk)" [disabled]="modify">Zapisz</button>
       <b>{{ junk.name }}</b>
       <input type="text" [(ngModel)]="junk.place">    
     </p>

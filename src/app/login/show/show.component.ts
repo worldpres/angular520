@@ -12,6 +12,7 @@ export class ShowComponent implements OnInit {
   public database = [];
   public searchName;
   public firstLetter;
+  public modify = false;
 
   constructor(private _apiService: ApiService) { }
 
@@ -20,7 +21,10 @@ export class ShowComponent implements OnInit {
   }
 
   private refreshDatabase() {
-    this._apiService.readDatabase().subscribe(data => this.database = data);
+    this._apiService.readDatabase().subscribe((data) => {
+      this.database = data;
+      this.modify = false;
+    });
   }
 
   private cleanDatabase() {
@@ -72,6 +76,7 @@ export class ShowComponent implements OnInit {
   }
 
   private delete(junk) {
+    this.modify = true;
     this._apiService.deleteFromDatabase(junk._id).subscribe(
       suc => { },
       err => { },
@@ -81,6 +86,7 @@ export class ShowComponent implements OnInit {
   }
 
   private update(junk) {
+    this.modify = true;
     this._apiService.updateInDatabase(JSON.stringify(junk)).subscribe(
       suc => { },
       err => { },
