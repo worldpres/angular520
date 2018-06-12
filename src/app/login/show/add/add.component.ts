@@ -41,7 +41,7 @@ export class AddComponent implements OnInit {
     }
   }
 
-  private add() {
+  public add() {
     this._apiService.addToDatabase(this.register.name, this.register.place).subscribe(data => {
       if (data) {
         // this.database.push({'name': this.register.name, 'place': this.register.place});
@@ -63,7 +63,7 @@ export class AddComponent implements OnInit {
     */
   }
 
-  private isDisable() {
+  public isDisable() {
     if (this.register.name && this.register.place && !this.register.found && this.register.correct) { return false; }
     return true;
   }

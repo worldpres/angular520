@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  protected user = {
+  public user = {
     login: 'a',
     password: 'a',
     logged: false,

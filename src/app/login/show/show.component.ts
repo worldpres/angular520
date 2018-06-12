@@ -35,7 +35,7 @@ export class ShowComponent implements OnInit {
     this._apiService.copyDatabase().subscribe( () => this.refreshDatabase() );
   }
 
-  private alphabet() {
+  public alphabet() {
     let letters = [];
     for (const obj of this.database) {
       if (obj.name) {
@@ -46,7 +46,7 @@ export class ShowComponent implements OnInit {
     return letters.sort( function(a, b) { return a.localeCompare(b); } );
   }
 
-  private setFirstLetter(l) {
+  public setFirstLetter(l) {
     this.firstLetter = l;
   }
 
@@ -54,11 +54,11 @@ export class ShowComponent implements OnInit {
     return i === this.alphabet().indexOf(this.firstLetter);
   }
 
-  private setSearchName(s) {
+  public setSearchName(s) {
     this.searchName = s;
   }
 
-  private prepareDatabase(firstLetter = '', searchName = '', sortProp = 'name', sortAsc = true) {
+  public prepareDatabase(firstLetter = '', searchName = '', sortProp = 'name', sortAsc = true) {
     let data = this.database.sort(function(a, b) {
       if ( sortAsc ) {
         return a[sortProp].localeCompare(b[sortProp]);
