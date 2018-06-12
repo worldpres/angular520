@@ -1,6 +1,9 @@
 <p>Dodaj nowy rekord:
   <input type="text" [(ngModel)]="register.name" (keyup)="registerNameValidation($event)" placeholder="Podaj nazwę">
   <input type="text" [(ngModel)]="register.place" placeholder="Podaj miejsce">
-  <button type="submit" (click)="add()" [disabled]="isDisable()">Dodaj</button>
+  <button type="submit" (click)="add()" [disabled]="isDisable()" class="waves-effect waves-light btn">
+    <i class="material-icons">add_circle</i>
+    Dodaj
+  </button>
 </p>
 <p>{{ register.info }}</p>

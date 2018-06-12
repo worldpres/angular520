@@ -1,35 +1,68 @@
-<span *ngIf="logged">
-  <button (click)="refreshDatabase()">Odśwież bazę</button>
-  <button (click)="cleanDatabase()">Czyść bazę</button>
-  <button (click)="importDatabase()">Importuj bazę</button>
-  <app-add [database]="database" (uploaded)="added($event)"></app-add>
-</span>
-
-<div>
-  <button *ngFor="let letter of alphabet(); let i=index" (click)="setFirstLetter(letter)" [disabled]="disableLetter(i)">
-    {{letter}}
-  </button>
-  <button (click)="setFirstLetter('')" [disabled]="!firstLetter">Czyść</button>
+<div *ngIf="logged" class="container">
+  <div class="row">
+    <div class="col s12 center-align">
+      <button (click)="refreshDatabase()" class="waves-effect waves-light btn">Odśwież bazę</button>
+      <button (click)="cleanDatabase()" class="waves-effect waves-light btn">Czyść bazę</button>
+      <button (click)="importDatabase()" class="waves-effect waves-light btn">Importuj bazę</button>
+      <app-add [database]="database" (uploaded)="added($event)"></app-add>
+    </div>
+  </div>
 </div>
 
-<div>
-  <input type="text" [(ngModel)]="searchName">
-  <button (click)="setSearchName('')" [disabled]="!searchName">Czyść</button>
+<div class="container center-align alphabet">
+  <div class="row">
+    <div class="col s12">
+      <button *ngFor="let letter of alphabet(); let i=index" (click)="setFirstLetter(letter)" [disabled]="disableLetter(i)" class="waves-effect waves-light btn">
+        {{letter}}
+      </button>
+      <button (click)="setFirstLetter('')" [disabled]="!firstLetter" class="waves-effect waves-light btn">
+        <i class="material-icons">remove_circle</i>
+        Czyść
+      </button>
+    </div>
+  </div>
 </div>
 
-<div *ngFor="let junk of prepareDatabase(firstLetter, searchName)">
+<div class="container">
+  <div class="row">
+    <div class="col s12 m10">
+      <input type="text" [(ngModel)]="searchName" placeholder="Wyszukaj">
+    </div>
+    <div class="col s12 m2">
+      <button (click)="setSearchName('')" [disabled]="!searchName" class="waves-effect waves-light btn">
+        <i class="material-icons">remove_circle</i>
+        Czyść
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngFor="let junk of prepareDatabase(firstLetter, searchName)">
   <div *ngIf="logged; else notLoggedBlock">
-    <p>
-      <button (click)="delete(junk)" [disabled]="modify">Usuń</button>
-      <button (click)="update(junk)" [disabled]="modify">Zapisz</button>
-      <b>{{ junk.name }}</b>
-      <input type="text" [(ngModel)]="junk.place">    
-    </p>
+    <div class="row valign-wrapper">
+      <div class="col s8">
+        <b>{{ junk.name }}</b>
+        <input type="text" [(ngModel)]="junk.place">
+      </div>
+      <div class="col s2">
+        <button (click)="delete(junk)" [disabled]="modify" class="waves-effect waves-light btn btn-small">
+          <i class="material-icons">delete</i>
+          Usuń
+        </button>
+      </div>
+      <div class="col s2">
+        <button (click)="update(junk)" [disabled]="modify" class="waves-effect waves-light btn btn-small">
+          <i class="material-icons">save</i>
+          Zapisz
+        </button>
+      </div>
+    </div>
   </div>
   <ng-template #notLoggedBlock>
-    <p>
-      <b>{{ junk.name }}</b>: 
-      {{ junk.place }}
-    </p>
+    <div class="row">
+      <div class="col s12">
+        <b>{{ junk.name }}</b>: {{ junk.place }}
+      </div>
+    </div>
   </ng-template>
 </div>

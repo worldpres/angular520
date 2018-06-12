@@ -1,13 +1,32 @@
-{{user.loggedText}}
+<div class="container">
+  <div class="row">
+    <div class="col s8">
+      {{user.loggedText}}
+    </div>
+    <div class="col s4 right-align">
+      <button *ngIf="user.logged" (click)="logOut()" class="waves-effect waves-light btn">
+          <i class="material-icons">lock_outline</i>
+          Wyloguj
+      </button>
+    </div>
+  </div>
+</div>
 
-<button *ngIf="user.logged; else notLoggedBlock" (click)="logOut()">Wyloguj</button>
-
-<ng-template #notLoggedBlock>
-  <p>
-    <input #login type="text" placeholder="Login">
-    <input #password type="password" placeholder="Hasło">
-    <button (click)="logIn(login.value, password.value)">Zaloguj się</button>
-  </p>
-</ng-template>
+<div *ngIf="!user.logged" class="container">
+  <div class="row">
+    <div class="col s12 m4">
+      <input #login type="text" placeholder="Login">
+    </div>
+    <div class="col s12 m4">
+      <input #password type="password" placeholder="Hasło">
+    </div>
+    <div class="col s12 m4">
+      <button class="waves-effect waves-light btn" (click)="logIn(login.value, password.value)">
+        <i class="material-icons">lock_open</i>
+        Zaloguj się
+      </button>
+    </div>
+  </div>
+</div>
 
 <app-show [logged]="user.logged"></app-show>
