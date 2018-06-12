@@ -6,6 +6,17 @@
     box-sizing: border-box;
     outline: none;
 }
-body{
+
+body {
     overflow-y: scroll;
+}
+
+.btn i,
+.btn-large i,
+.btn-small i,
+.btn-floating i,
+.btn-large i,
+.btn-small i,
+.btn-flat i {
+    font-size: 1em;
 }
