@@ -24,8 +24,10 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
+/* Deploy to heroku start */
 app.use(express.static(__dirname + '/dist'));
 app.listen(process.env.PORT || 8080);
+/* Deploy to heroku end */
 
 /**
  * Get port from environment and store in Express.
