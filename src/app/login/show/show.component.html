@@ -1,6 +1,6 @@
 <div *ngIf="logged" class="container">
   <div class="row">
-    <div class="col s12 center-align">
+    <div class="col s12 center-align menu">
       <button (click)="refreshDatabase()" class="waves-effect waves-light btn">Odśwież bazę</button>
       <button (click)="cleanDatabase()" class="waves-effect waves-light btn">Czyść bazę</button>
       <button (click)="importDatabase()" class="waves-effect waves-light btn">Importuj bazę</button>
@@ -39,18 +39,18 @@
 
 <div class="container" *ngFor="let junk of prepareDatabase(firstLetter, searchName)">
   <div *ngIf="logged; else notLoggedBlock">
-    <div class="row valign-wrapper">
-      <div class="col s8">
+    <div class="row">
+      <div class="col s12 m8">
         <b>{{ junk.name }}</b>
         <input type="text" [(ngModel)]="junk.place">
       </div>
-      <div class="col s2">
+      <div class="col s6 m2">
         <button (click)="delete(junk)" [disabled]="modify" class="waves-effect waves-light btn btn-small">
           <i class="material-icons">delete</i>
           Usuń
         </button>
       </div>
-      <div class="col s2">
+      <div class="col s6 m2">
         <button (click)="update(junk)" [disabled]="modify" class="waves-effect waves-light btn btn-small">
           <i class="material-icons">save</i>
           Zapisz
