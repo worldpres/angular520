@@ -1,6 +1,10 @@
 .alphabet button{
     margin: 4px;
+    min-width: 46px;
 }
 .menu button{
     margin: 4px auto;
+}
+.search{
+    margin:60px auto;
 }

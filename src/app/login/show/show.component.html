@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container search">
   <div class="row">
     <div class="col s12 m10">
       <input type="text" [(ngModel)]="searchName" placeholder="Wyszukaj">
@@ -41,10 +41,10 @@
   <div *ngIf="logged; else notLoggedBlock">
     <div class="row">
       <div class="col s12 m8">
-        <b>{{ junk.name }}</b>
+        <h5>{{ junk.name }}</h5>
         <input type="text" [(ngModel)]="junk.place">
       </div>
-      <div class="col s6 m2">
+      <div class="col s6 m2 right-align">
         <button (click)="delete(junk)" [disabled]="modify" class="waves-effect waves-light btn btn-small">
           <i class="material-icons">delete</i>
           Usuń
@@ -61,7 +61,7 @@
   <ng-template #notLoggedBlock>
     <div class="row">
       <div class="col s12">
-        <b>{{ junk.name }}</b>: {{ junk.place }}
+        <h5>{{ junk.name }}</h5>: {{ junk.place }}
       </div>
     </div>
   </ng-template>
